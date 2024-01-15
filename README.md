@@ -11,4 +11,7 @@ Primary purpose of the project is to learn the architecture of game engines and 
 
 and more as the project evolves.
 
+# Logging
+Utilises spdlog library for logging functionality.
 
+Link to github repo: https://github.com/gabime/spdlog
