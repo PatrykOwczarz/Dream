@@ -15,3 +15,8 @@ and more as the project evolves.
 Utilises spdlog library for logging functionality.
 
 Link to github repo: https://github.com/gabime/spdlog
+
+# Premake
+This project uses Premake for project generation.
+
+Link to github repo: https://github.com/premake/premake-core
