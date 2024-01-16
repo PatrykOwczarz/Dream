@@ -4,6 +4,9 @@
     <Filter Include="Dream">
       <UniqueIdentifier>{2EC00D0D-9AD4-35BE-6356-D91DCF2932EF}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Dream\Events">
+      <UniqueIdentifier>{52AC5FDB-3E0F-EF7F-E794-2736D3D6BA02}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Dream.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\Dream\EntryPoint.h">
       <Filter>Dream</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Dream\Events\ApplicationEvent.h">
+      <Filter>Dream\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Dream\Events\Event.h">
+      <Filter>Dream\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Dream\Events\KeyEvent.h">
+      <Filter>Dream\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Dream\Events\MouseEvent.h">
+      <Filter>Dream\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Dream\Log.h">
       <Filter>Dream</Filter>
