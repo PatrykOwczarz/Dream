@@ -1,9 +1,7 @@
 #pragma once
+#include "dmpch.h"
 
 #include "Dream/Core.h"
-
-#include <string>
-#include <functional>
 
 namespace Dream {
 

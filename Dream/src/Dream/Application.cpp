@@ -1,3 +1,4 @@
+#include "dmpch.h"
 #include "Application.h"
 
 #include "Dream/Events/ApplicationEvent.h"

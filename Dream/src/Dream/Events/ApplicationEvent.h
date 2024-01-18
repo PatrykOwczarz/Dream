@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Dream {
 
 	class DREAM_API WindowResizeEvent : public Event
