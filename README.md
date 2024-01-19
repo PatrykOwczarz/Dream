@@ -22,3 +22,10 @@ Link to github repo: https://github.com/gabime/spdlog
 This project uses Premake for project generation.
 
 Link to github repo: https://github.com/premake/premake-core
+
+# GLFW
+This project uses GLFW for creating windows, contexts and surfaces, reading input, handling events, etc.
+
+Uses a submodule cloned from The Cherno owned repository which contains a premake file to generate a project for GLFW in the solution. Link: https://github.com/TheCherno/glfw
+
+Original: https://github.com/glfw/glfw
