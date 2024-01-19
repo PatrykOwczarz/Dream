@@ -29,6 +29,7 @@ namespace Dream {
 
 	class DREAM_API WindowCloseEvent : public Event
 	{
+	public:
 		WindowCloseEvent() {}
 
 		EVENT_CLASS_TYPE(WindowClose)
@@ -37,6 +38,7 @@ namespace Dream {
 
 	class DREAM_API AppTickEvent : public Event
 	{
+	public:
 		AppTickEvent() {}
 
 		EVENT_CLASS_TYPE(AppTick)
@@ -45,6 +47,7 @@ namespace Dream {
 
 	class DREAM_API AppUpdateEvent : public Event
 	{
+	public:
 		AppUpdateEvent() {}
 
 		EVENT_CLASS_TYPE(AppUpdate)
@@ -53,6 +56,7 @@ namespace Dream {
 
 	class DREAM_API AppRenderEvent : public Event
 	{
+	public:
 		AppRenderEvent() {}
 
 		EVENT_CLASS_TYPE(AppRender)
