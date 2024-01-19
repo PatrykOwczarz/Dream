@@ -7,6 +7,12 @@
     <Filter Include="Dream\Events">
       <UniqueIdentifier>{52AC5FDB-3E0F-EF7F-E794-2736D3D6BA02}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Dream.h" />
@@ -34,6 +40,12 @@
     <ClInclude Include="src\Dream\Log.h">
       <Filter>Dream</Filter>
     </ClInclude>
+    <ClInclude Include="src\Dream\Window.h">
+      <Filter>Dream</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\dmpch.h" />
   </ItemGroup>
   <ItemGroup>
@@ -42,6 +54,9 @@
     </ClCompile>
     <ClCompile Include="src\Dream\Log.cpp">
       <Filter>Dream</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\dmpch.cpp" />
   </ItemGroup>

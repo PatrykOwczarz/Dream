@@ -10,6 +10,12 @@ workspace "Dream"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.sustem}-%{cfg.architecture}"
 
+-- Include directories relative to solution directory (root folder)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Dream/vendor/GLFW/include"
+
+include "Dream/vendor/GLFW"
+
 project "Dream"
 	location "Dream"
 	kind "SharedLib" -- SharedLib is the same as DLL in premake
@@ -30,7 +36,14 @@ project "Dream"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
