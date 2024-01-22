@@ -37,6 +37,12 @@
     <ClInclude Include="src\Dream\Events\MouseEvent.h">
       <Filter>Dream\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Dream\Layer.h">
+      <Filter>Dream</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Dream\LayerStack.h">
+      <Filter>Dream</Filter>
+    </ClInclude>
     <ClInclude Include="src\Dream\Log.h">
       <Filter>Dream</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Dream\Application.cpp">
+      <Filter>Dream</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Dream\Layer.cpp">
+      <Filter>Dream</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Dream\LayerStack.cpp">
       <Filter>Dream</Filter>
     </ClCompile>
     <ClCompile Include="src\Dream\Log.cpp">

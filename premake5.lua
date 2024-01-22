@@ -62,14 +62,17 @@ project "Dream"
 
 	filter "configurations:Debug"
 		defines "DM_DEBUG"
+		staticruntime "off"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "DM_RELEASE"
+		staticruntime "off"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "DM_DIST"
+		staticruntime "off"
 		optimize "On"
 
 project "Sandbox"
@@ -108,12 +111,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "DM_DEBUG"
+		staticruntime "off"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "DM_RELEASE"
+		staticruntime "off"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "DM_DIST"
+		staticruntime "off"
 		optimize "On"
