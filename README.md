@@ -29,3 +29,8 @@ This project uses GLFW for creating windows, contexts and surfaces, reading inpu
 Uses a submodule cloned from The Cherno owned repository which contains a premake file to generate a project for GLFW in the solution. Link: https://github.com/TheCherno/glfw
 
 Original: https://github.com/glfw/glfw
+
+# Glad
+This project utilises glad which is a multi-language GL loader.
+
+Original: https://github.com/Dav1dde/glad
