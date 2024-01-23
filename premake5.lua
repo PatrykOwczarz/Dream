@@ -13,8 +13,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.sustem}-%{cfg.architecture}"
 -- Include directories relative to solution directory (root folder)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Dream/vendor/GLFW/include"
+IncludeDir["Glad"] = "Dream/vendor/Glad/include"
 
 include "Dream/vendor/GLFW"
+include "Dream/vendor/Glad"
 
 project "Dream"
 	location "Dream"
@@ -37,12 +39,14 @@ project "Dream"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"GLAD",
 		"opengl32.lib"
 	}
 
@@ -53,7 +57,8 @@ project "Dream"
 
 		defines {
 			"DM_PLATFORM_WINDOWS",
-			"DM_BUILD_DLL"
+			"DM_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands { -- This is a workaround to an issue encountered with the COPY
