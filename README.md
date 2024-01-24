@@ -34,3 +34,10 @@ Original: https://github.com/glfw/glfw
 This project utilises glad which is a multi-language GL loader.
 
 Original: https://github.com/Dav1dde/glad
+
+# ImGui
+This project uses ImGui (Immediate mode Graphical User Interface)
+
+The version used is a fork from TheChernos repo: https://github.com/TheCherno/imgui
+
+Original: https://github.com/ocornut/imgui
