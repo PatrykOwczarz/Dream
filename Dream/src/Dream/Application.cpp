@@ -3,8 +3,6 @@
 
 namespace Dream {
 
-#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
-
 	Application* Application::s_Instance = nullptr;
 
 	Application::Application() 
@@ -13,7 +11,7 @@ namespace Dream {
 		s_Instance = this;
 
 		m_Window = std::unique_ptr<Window>(Window::Create());
-		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+		m_Window->SetEventCallback(DM_BIND_EVENT_FN(Application::OnEvent));
 	}
 
 	Application::~Application() 
@@ -35,7 +33,7 @@ namespace Dream {
 	void Application::OnEvent(Event& e)
 	{
 		EventDispatcher dispatcher(e);
-		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
+		dispatcher.Dispatch<WindowCloseEvent>(DM_BIND_EVENT_FN(Application::OnWindowClose));
 
 		DM_CORE_TRACE("{0}", e);
 
