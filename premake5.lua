@@ -1,5 +1,6 @@
 workspace "Dream"
 	architecture "x64"
+	startproject "Sandbox"
 
 	configurations
 	{
@@ -20,10 +21,18 @@ include "Dream/vendor/GLFW"
 include "Dream/vendor/Glad"
 include "Dream/vendor/imgui"
 
+group "Dependencies"
+	include "Dream/vendor/GLFW"
+	include "Dream/vendor/Glad"
+	include "Dream/vendor/imgui"
+
+group ""
+
 project "Dream"
 	location "Dream"
 	kind "SharedLib" -- SharedLib is the same as DLL in premake
 	language "C++"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -56,7 +65,6 @@ project "Dream"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines {
@@ -71,23 +79,24 @@ project "Dream"
 
 	filter "configurations:Debug"
 		defines "DM_DEBUG"
-		staticruntime "off"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "DM_RELEASE"
-		staticruntime "off"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "DM_DIST"
-		staticruntime "off"
+		runtime "Release"
 		optimize "On"
 
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -111,7 +120,6 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines {
@@ -120,15 +128,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "DM_DEBUG"
-		staticruntime "off"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "DM_RELEASE"
-		staticruntime "off"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "DM_DIST"
-		staticruntime "off"
+		runtime "Release"
 		optimize "On"
