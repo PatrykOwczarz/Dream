@@ -10,7 +10,7 @@ public:
 
 	void OnUpdate() override
 	{
-		DM_INFO("ExampleLayer::Update");
+		//DM_INFO("ExampleLayer::Update");
 	}
 
 	void OnEvent(Dream::Event& event) override

@@ -1,6 +1,8 @@
 #include "dmpch.h"
 #include "Application.h"
 
+#include "Input.h"
+
 namespace Dream {
 
 	Application* Application::s_Instance = nullptr;
@@ -56,6 +58,19 @@ namespace Dream {
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
 
+			//auto [x, y] = Input::GetMousePosition();
+			//DM_CORE_TRACE("{0}, {1}", x, y);
+
+			bool isPressed = Input::IsMouseButtonPressed(0);
+			bool isAPressed = Input::IsKeyPressed('A');
+			if (isPressed) {
+				DM_CORE_TRACE("Left Mouse button: {0}", isPressed);
+			}
+			if(isAPressed){
+				DM_CORE_TRACE("A key: {0}", isAPressed);
+			}
+			
+			
 			m_Window->OnUpdate();
 		}
 	}
