@@ -67,6 +67,8 @@
     <ClInclude Include="src\dmpch.h" />
     <ClInclude Include="src\Dream\Input.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\Dream\KeyCodes.h" />
+    <ClInclude Include="src\Dream\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Dream\Application.cpp">

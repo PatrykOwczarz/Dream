@@ -11,6 +11,15 @@ public:
 	void OnUpdate() override
 	{
 		//DM_INFO("ExampleLayer::Update");
+
+		bool isPressed = Dream::Input::IsMouseButtonPressed(DM_MOUSE_BUTTON_1);
+		bool isAPressed = Dream::Input::IsKeyPressed(DM_KEY_A);
+		if (isPressed) {
+			DM_CORE_TRACE("Left Mouse button: {0}", isPressed);
+		}
+		if (isAPressed) {
+			DM_CORE_TRACE("A key: {0}", isAPressed);
+		}
 	}
 
 	void OnEvent(Dream::Event& event) override

@@ -162,9 +162,11 @@
     <ClInclude Include="src\Dream\Events\MouseEvent.h" />
     <ClInclude Include="src\Dream\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Dream\Input.h" />
+    <ClInclude Include="src\Dream\KeyCodes.h" />
     <ClInclude Include="src\Dream\Layer.h" />
     <ClInclude Include="src\Dream\LayerStack.h" />
     <ClInclude Include="src\Dream\Log.h" />
+    <ClInclude Include="src\Dream\MouseButtonCodes.h" />
     <ClInclude Include="src\Dream\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
