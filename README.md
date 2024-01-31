@@ -41,3 +41,8 @@ This project uses ImGui (Immediate mode Graphical User Interface)
 The version used is a fork from TheChernos repo: https://github.com/TheCherno/imgui
 
 Original: https://github.com/ocornut/imgui
+
+# glm
+This project uses glm which is an OpenGL mathematics library.
+
+Link to repo: https://github.com/g-truc/glm
