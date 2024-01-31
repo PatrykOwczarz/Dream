@@ -7,3 +7,6 @@
 [submodule "Dream/vendor/imgui"]
 	path = Dream/vendor/imgui
 	url = https://github.com/TheCherno/imgui
+[submodule "Dream/vendor/glm"]
+	path = Dream/vendor/glm
+	url = https://github.com/g-truc/glm

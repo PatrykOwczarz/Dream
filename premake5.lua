@@ -16,6 +16,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Dream/vendor/GLFW/include"
 IncludeDir["Glad"] = "Dream/vendor/Glad/include"
 IncludeDir["ImGui"] = "Dream/vendor/imgui"
+IncludeDir["glm"] = "Dream/vendor/glm"
 
 include "Dream/vendor/GLFW"
 include "Dream/vendor/Glad"
@@ -43,7 +44,9 @@ project "Dream"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
 
 	includedirs
@@ -52,7 +55,8 @@ project "Dream"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 	}
 
 	links
@@ -110,7 +114,8 @@ project "Sandbox"
 	includedirs
 	{
 		"Dream/vendor/spdlog/include",
-		"Dream/src"
+		"Dream/src",
+		"%{IncludeDir.glm}"
 	}
 
 	links 
