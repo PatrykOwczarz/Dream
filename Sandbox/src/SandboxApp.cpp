@@ -12,19 +12,22 @@ public:
 	{
 		//DM_INFO("ExampleLayer::Update");
 
-		bool isPressed = Dream::Input::IsMouseButtonPressed(DM_MOUSE_BUTTON_1);
-		bool isAPressed = Dream::Input::IsKeyPressed(DM_KEY_A);
-		if (isPressed) {
-			DM_CORE_TRACE("Left Mouse button: {0}", isPressed);
-		}
-		if (isAPressed) {
-			DM_CORE_TRACE("A key: {0}", isAPressed);
-		}
+		if (Dream::Input::IsKeyPressed(DM_KEY_TAB))
+			DM_TRACE("Tab key is pressed (poll)!");
+		
 	}
 
 	void OnEvent(Dream::Event& event) override
 	{
-		DM_TRACE("{0}", event);
+		//DM_TRACE("{0}", event);
+
+		if (event.GetEventType() == Dream::EventType::KeyPressed)
+		{
+			Dream::KeyPressedEvent& e = (Dream::KeyPressedEvent&)event;
+			if (e.GetKeyCode() == DM_KEY_TAB)
+				DM_TRACE("Tab key is pressed (event)!");
+			DM_TRACE("{0}", (char)e.GetKeyCode());
+		}
 	}
 };
 
@@ -33,8 +36,9 @@ class Sandbox : public Dream::Application {
 public:
 	Sandbox() 
 	{
-		PushLayer(new ExampleLayer());
-		PushOverlay(new Dream::ImGuiLayer());
+		// issue here if I don't comment this out when trying to dock.
+		//PushLayer(new ExampleLayer());
+		
 	}
 
 	~Sandbox() 

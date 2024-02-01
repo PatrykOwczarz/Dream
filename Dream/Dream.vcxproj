@@ -168,7 +168,6 @@
     <ClInclude Include="src\Dream\Log.h" />
     <ClInclude Include="src\Dream\MouseButtonCodes.h" />
     <ClInclude Include="src\Dream\Window.h" />
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\dmpch.h" />
@@ -590,11 +589,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Dream\Application.cpp" />
+    <ClCompile Include="src\Dream\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Dream\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Dream\Layer.cpp" />
     <ClCompile Include="src\Dream\LayerStack.cpp" />
     <ClCompile Include="src\Dream\Log.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\dmpch.cpp">

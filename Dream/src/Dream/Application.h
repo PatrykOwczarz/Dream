@@ -7,6 +7,8 @@
 #include "Events/Event.h"
 #include "Dream/Events/ApplicationEvent.h"
 
+#include "Dream/ImGui/ImGuiLayer.h"
+
 namespace Dream {
 
 	class DREAM_API Application
@@ -30,6 +32,7 @@ namespace Dream {
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 
