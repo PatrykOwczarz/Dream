@@ -72,7 +72,10 @@ namespace Dream {
 			
 			m_ImGuiLayer->Begin();
 			for (Layer* layer : m_LayerStack)
-				m_ImGuiLayer->OnImGuiRender();
+			{
+				if(layer->GetName() == "ImGuiLayer")
+					m_ImGuiLayer->OnImGuiRender();
+			}
 			m_ImGuiLayer->End();
 
 			m_Window->OnUpdate();

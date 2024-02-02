@@ -115,7 +115,9 @@ project "Sandbox"
 	{
 		"Dream/vendor/spdlog/include",
 		"Dream/src",
+		"Dream/vendor",
 		"%{IncludeDir.glm}"
+		
 	}
 
 	links 
