@@ -1,12 +1,15 @@
 #pragma once
 
 #ifdef DM_PLATFORM_WINDOWS
+#if DM_DYNAMIC_LINK
 	#ifdef DM_BUILD_DLL
 		#define DREAM_API _declspec(dllexport)
 	#else
 		#define DREAM_API _declspec(dllimport)
 	#endif
-
+#else
+	#define DREAM_API
+#endif
 #else
 	#error Dream only supports Windows!
 

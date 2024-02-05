@@ -31,9 +31,10 @@ group ""
 
 project "Dream"
 	location "Dream"
-	kind "SharedLib" -- SharedLib is the same as DLL in premake
+	kind "StaticLib" 
 	language "C++"
-	staticruntime "off"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -47,6 +48,11 @@ project "Dream"
 		"%{prj.name}/src/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl"
+	}
+
+	defines
+	{
+		"_CRT_SECURE_NO_WARNINGS"	
 	}
 
 	includedirs
@@ -68,7 +74,6 @@ project "Dream"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
 		systemversion "latest"
 
 		defines {
@@ -77,30 +82,27 @@ project "Dream"
 			"GLFW_INCLUDE_NONE"
 		}
 
-		postbuildcommands { -- This is a workaround to an issue encountered with the COPY
-			"copy /B /Y ..\\bin\\" .. outputdir .. "\\Dream\\Dream.dll ..\\bin\\" .. outputdir .. "\\Sandbox\\ > nul"
-		}
-
 	filter "configurations:Debug"
 		defines "DM_DEBUG"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "DM_RELEASE"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "DM_DIST"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
-	staticruntime "off"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -126,7 +128,6 @@ project "Sandbox"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
 		systemversion "latest"
 
 		defines {
@@ -136,14 +137,14 @@ project "Sandbox"
 	filter "configurations:Debug"
 		defines "DM_DEBUG"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "DM_RELEASE"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "DM_DIST"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
