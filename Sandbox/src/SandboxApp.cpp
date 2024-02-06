@@ -29,9 +29,9 @@ public:
 		// many annoying warnings which are hard to fix with a dll. Also a static library is faster generally
 		// since the compiler knows all symbols at runtime.
 
-		//ImGui::Begin("Test");
-		//ImGui::Text("Hello World");
-		//ImGui::End();
+		ImGui::Begin("Test");
+		ImGui::Text("Hello World");
+		ImGui::End();
 	}
 
 	void OnEvent(Dream::Event& event) override

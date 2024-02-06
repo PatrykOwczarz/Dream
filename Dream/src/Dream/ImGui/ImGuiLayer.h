@@ -1,5 +1,5 @@
 #pragma once
-#include "Dream/Layer.h";
+#include "Dream/Layer.h"
 
 #include "Dream/Events/MouseEvent.h"
 #include "Dream/Events/ApplicationEvent.h"
