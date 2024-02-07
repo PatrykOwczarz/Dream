@@ -16,7 +16,14 @@ namespace Dream {
 	{
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		DM_CORE_ASSERT(status, "Failed to initialize Glad!")
+		DM_CORE_ASSERT(status, "Failed to initialize Glad!");
+
+		// OpenGL and Graphics info
+		DM_CORE_INFO("OpenGL Info:");
+		DM_CORE_INFO("  Vendor: {0}", (const char*)glGetString(GL_VENDOR));
+		DM_CORE_INFO("  Renderer: {0}", (const char*)glGetString(GL_RENDERER));
+		DM_CORE_INFO("  Version: {0}", (const char*)glGetString(GL_VERSION));
+		
 	}
 
 	void OpenGLContext::SwapBuffers()
