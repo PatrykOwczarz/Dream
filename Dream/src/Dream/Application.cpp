@@ -28,10 +28,9 @@ namespace Dream {
 		glBindBuffer(GL_ARRAY_BUFFER, m_VertexBuffer);
 
 		float vertices[3 * 4] = {
-			-0.5f, 0.0f, 0.0f,
-			0.5f, 0.0f, 0.0f,
+			-0.5f, -0.5f, 0.0f,
+			0.5f, -0.5f, 0.0f,
 			0.0f, 0.5f, 0.0f,
-			0.0f, -0.5f, 0.0f
 
 		};
 
@@ -44,9 +43,52 @@ namespace Dream {
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_IndexBuffer);
 
 		// This draws a square by drawing 2 triangles made of indices 0, 1, 2 and 0, 3 ,1 with anti-clockwise winding.
-		unsigned int indices[6] = { 0 , 1 , 2 , 0 , 3, 1};
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER, 6 * sizeof(unsigned int), &indices[0], GL_STATIC_DRAW);
+		// unsigned int indices[6] = { 0 , 1 , 2 , 0 , 3, 1};
 
+		// code for 1 triangle
+		unsigned int indices[3] = { 0 , 1 , 2};
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, 3 * sizeof(unsigned int), &indices[0], GL_STATIC_DRAW);
+
+		std::string vertexSrc = R"(
+			#version 330 core
+
+			layout(location = 0) in vec3 a_Position;			
+
+			out vec3 v_Position;
+
+			void main()
+			{
+				v_Position = a_Position;
+				if (v_Position.x < 0.0)
+				{
+					v_Position.x = v_Position.x * -1.0;
+					
+				}
+				else if (v_Position.y < 0.0)
+				{
+					v_Position.z = v_Position.y * -1.0;
+					v_Position.x = 0;
+				}
+				
+				
+				gl_Position = vec4(a_Position, 1.0);
+			}
+		)";
+
+		std::string fragmentSrc = R"(
+			#version 330 core
+
+			layout(location = 0) out vec4 color;			
+
+			in vec3 v_Position;			
+
+			void main()
+			{
+				color = vec4(v_Position, 1.0);
+			}
+		)";
+
+		m_Shader.reset(new Shader(vertexSrc, fragmentSrc));
 	}
 
 	Application::~Application() 
@@ -92,8 +134,9 @@ namespace Dream {
 			glClearColor(0.1f, 0.1f, 0.1f, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
 
+			m_Shader->Bind();
 			glBindVertexArray(m_VertexArray);
-			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, (void*)0);
+			glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, (void*)0);
 
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();

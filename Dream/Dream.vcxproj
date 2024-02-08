@@ -159,6 +159,7 @@
     <ClInclude Include="src\Dream\Log.h" />
     <ClInclude Include="src\Dream\MouseButtonCodes.h" />
     <ClInclude Include="src\Dream\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Dream\Renderer\Shader.h" />
     <ClInclude Include="src\Dream\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
@@ -587,6 +588,7 @@
     <ClCompile Include="src\Dream\Layer.cpp" />
     <ClCompile Include="src\Dream\LayerStack.cpp" />
     <ClCompile Include="src\Dream\Log.cpp" />
+    <ClCompile Include="src\Dream\Renderer\Shader.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
