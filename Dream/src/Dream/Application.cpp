@@ -24,9 +24,6 @@ namespace Dream {
 		glGenVertexArrays(1, &m_VertexArray);
 		glBindVertexArray(m_VertexArray);
 
-		glGenBuffers(1, &m_VertexBuffer);
-		glBindBuffer(GL_ARRAY_BUFFER, m_VertexBuffer);
-
 		float vertices[3 * 4] = {
 			-0.5f, -0.5f, 0.0f,
 			0.5f, -0.5f, 0.0f,
@@ -34,20 +31,17 @@ namespace Dream {
 
 		};
 
-		glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+		m_VertexBuffer.reset(VertexBuffer::Create(vertices, sizeof(vertices)));
 
 		glEnableVertexAttribArray(0);
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), nullptr);
-
-		glGenBuffers(1, &m_IndexBuffer);
-		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_IndexBuffer);
-
+		
 		// This draws a square by drawing 2 triangles made of indices 0, 1, 2 and 0, 3 ,1 with anti-clockwise winding.
 		// unsigned int indices[6] = { 0 , 1 , 2 , 0 , 3, 1};
 
 		// code for 1 triangle
-		unsigned int indices[3] = { 0 , 1 , 2};
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER, 3 * sizeof(unsigned int), &indices[0], GL_STATIC_DRAW);
+		uint32_t indices[3] = { 0 , 1 , 2};
+		m_IndexBuffer.reset(IndexBuffer::Create(indices, std::size(indices)));
 
 		std::string vertexSrc = R"(
 			#version 330 core
@@ -136,7 +130,7 @@ namespace Dream {
 
 			m_Shader->Bind();
 			glBindVertexArray(m_VertexArray);
-			glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, (void*)0);
+			glDrawElements(GL_TRIANGLES, m_IndexBuffer->GetCount(), GL_UNSIGNED_INT, (void*)0);
 
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
