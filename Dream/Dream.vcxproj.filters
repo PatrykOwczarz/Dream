@@ -1352,6 +1352,9 @@
     <ClInclude Include="src\Dream\Renderer\Renderer.h" />
     <ClInclude Include="src\Dream\Renderer\VertexArray.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
+    <ClInclude Include="src\Dream\Renderer\RendererAPI.h" />
+    <ClInclude Include="src\Dream\Renderer\RenderCommand.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Dream\Application.cpp">
@@ -1388,5 +1391,8 @@
     <ClCompile Include="src\Dream\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Dream\Renderer\VertexArray.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp" />
+    <ClCompile Include="src\Dream\Renderer\RendererAPI.cpp" />
+    <ClCompile Include="src\Dream\Renderer\RendererCommand.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
   </ItemGroup>
 </Project>
