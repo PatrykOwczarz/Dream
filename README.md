@@ -13,6 +13,8 @@ Primary purpose of the project is to learn the architecture of game engines and 
 
 and more as the project evolves.
 
+**Project paused to escape "tutorial hell". Will return in near future to implement vulkan renderer from scratch**
+
 # Logging
 Utilises spdlog library for logging functionality.
 
